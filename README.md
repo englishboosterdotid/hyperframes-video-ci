@@ -5,9 +5,10 @@ folder adalah satu proyek video (satu `index.html`), siap dirender lokal atau vi
 
 ## Isi
 
-| Folder                  | Video                                | Status |
-| ----------------------- | ------------------------------------ | ------ |
-| `sahabatkreator-launch` | Product launch Sahabat Kreator 30 detik | Komposisi selesai, siap render |
+| Folder                          | Video                                      | Status |
+| ------------------------------- | ------------------------------------------ | ------ |
+| `sahabatkreator-launch`         | Product launch 30 detik, **16:9** (1920×1080) | Komposisi selesai, siap render |
+| `sahabatkreator-launch-portrait` | Product launch 30 detik, **9:16** (1080×1920) | Komposisi selesai, siap render |
 
 ## Render lokal
 
@@ -33,12 +34,17 @@ kalau sudah banyak.
 
 ```
 hyperframes-video/
-├── .github/workflows/      # CI render
-├── sahabatkreator-launch/  # satu video = satu folder
-│   ├── index.html          # parent composition (atur urutan & timing adegan)
-│   ├── compositions/       # sub-composition per adegan (scene-*.html)
-│   ├── renders/            # output MP4 (gitignored)
-│   └── README.md           # spec + cara render
+├── .github/workflows/               # CI render (matrix: landscape + portrait)
+├── sahabatkreator-launch/           # 16:9 landscape
+│   ├── index.html                   # parent composition
+│   ├── compositions/                # sub-composition per adegan
+│   ├── renders/                     # output MP4 (gitignored)
+│   └── README.md
+├── sahabatkreator-launch-portrait/  # 9:16 portrait (TikTok/Reels/Shorts)
+│   ├── index.html
+│   ├── compositions/
+│   ├── renders/
+│   └── README.md
 └── README.md
 ```
 

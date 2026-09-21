@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Sahabat Kreator — Product Launch (Portrait)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0c1627;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      #stage {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+      }
+
+      .scene {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="stage"
+      data-composition-id="sk-launch-portrait"
+      data-start="0"
+      data-duration="30"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- ============ Scene 1 — hero (0–6s) ============ -->
+      <div
+        id="scene-hero"
+        class="scene"
+        data-composition-id="scene-hero"
+        data-composition-src="compositions/scene-hero.html"
+        data-start="0"
+        data-duration="6"
+        data-track-index="0"
+      ></div>
+
+      <!-- ============ Scene 2 — problem → solution (6–13s) ============ -->
+      <div
+        id="scene-problem"
+        class="scene"
+        data-composition-id="scene-problem"
+        data-composition-src="compositions/scene-problem.html"
+        data-start="6"
+        data-duration="7"
+        data-track-index="0"
+      ></div>
+
+      <!-- ============ Scene 3 — features (13–21s) ============ -->
+      <div
+        id="scene-features"
+        class="scene"
+        data-composition-id="scene-features"
+        data-composition-src="compositions/scene-features.html"
+        data-start="13"
+        data-duration="8"
+        data-track-index="0"
+      ></div>
+
+      <!-- ============ Scene 4 — platforms (21–26s) ============ -->
+      <div
+        id="scene-platforms"
+        class="scene"
+        data-composition-id="scene-platforms"
+        data-composition-src="compositions/scene-platforms.html"
+        data-start="21"
+        data-duration="5"
+        data-track-index="0"
+      ></div>
+
+      <!-- ============ Scene 5 — CTA (26–30s) ============ -->
+      <div
+        id="scene-cta"
+        class="scene"
+        data-composition-id="scene-cta"
+        data-composition-src="compositions/scene-cta.html"
+        data-start="26"
+        data-duration="4"
+        data-track-index="0"
+      ></div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["sk-launch-portrait"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

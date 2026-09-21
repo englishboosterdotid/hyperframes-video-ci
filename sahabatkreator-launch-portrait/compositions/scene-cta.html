@@ -1,0 +1,91 @@
+<template id="scene-cta-template">
+  <div
+    id="scene-cta"
+    data-composition-id="scene-cta"
+    data-width="1080"
+    data-height="1920"
+    class="scene scene-dark"
+  >
+    <style>
+      #scene-cta {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: #0c1627;
+        color: #ffffff;
+        opacity: 0;
+        padding: 0 80px;
+      }
+      #scene-cta .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(2px);
+        pointer-events: none;
+      }
+      #scene-cta .cta-title {
+        position: relative;
+        font-size: 68px;
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        max-width: 900px;
+      }
+      #scene-cta .cta-button {
+        position: relative;
+        margin-top: 56px;
+        padding: 26px 64px;
+        border-radius: 999px;
+        background: #fd9501;
+        color: #0c1627;
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        box-shadow: 0 22px 54px rgba(253, 149, 1, 0.34);
+      }
+      #scene-cta .cta-url {
+        position: relative;
+        margin-top: 48px;
+        font-size: 40px;
+        font-weight: 600;
+        color: #08a5fc;
+        letter-spacing: -0.01em;
+      }
+      #scene-cta .cta-note {
+        position: relative;
+        margin-top: 20px;
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.62);
+      }
+    </style>
+
+    <div class="blob" style="width: 700px; height: 700px; left: -220px; bottom: -280px; background: #08a5fc; opacity: 0.14"></div>
+    <div class="blob" style="width: 480px; height: 480px; right: -140px; top: -200px; background: #fd9501; opacity: 0.12"></div>
+
+    <h2 class="cta-title">Siap naik level konten Anda?</h2>
+    <div class="cta-button">Mulai Gratis Sekarang</div>
+    <div class="cta-url">sahabatkreator.com</div>
+    <div class="cta-note">Tanpa kartu kredit. Paket gratis selamanya.</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
+        const scope = "#scene-cta";
+
+        tl.fromTo(scope, { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0);
+        tl.fromTo(scope + " .cta-title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7 }, 0.5);
+        tl.fromTo(scope + " .cta-button", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.6 }, 1.3);
+        tl.fromTo(scope + " .cta-url", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6 }, 2.0);
+        tl.fromTo(scope + " .cta-note", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 2.6);
+
+        window.__timelines["scene-cta"] = tl;
+      })();
+    </script>
+  </div>
+</template>
