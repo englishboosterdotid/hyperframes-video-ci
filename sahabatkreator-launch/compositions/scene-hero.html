@@ -1,0 +1,114 @@
+<template id="scene-hero-template">
+  <div
+    id="scene-hero"
+    data-composition-id="scene-hero"
+    data-width="1920"
+    data-height="1080"
+    class="scene scene-dark"
+  >
+    <style>
+      #scene-hero {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: #0c1627;
+        color: #ffffff;
+        opacity: 0;
+      }
+      #scene-hero .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(2px);
+        pointer-events: none;
+      }
+      #scene-hero .hero-badge {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        background: rgba(253, 149, 1, 0.14);
+        border: 1px solid rgba(253, 149, 1, 0.45);
+        color: #fd9501;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+      }
+      #scene-hero .hero-title {
+        position: relative;
+        margin-top: 40px;
+        font-size: 84px;
+        font-weight: 700;
+        line-height: 1.12;
+        letter-spacing: -0.035em;
+      }
+      #scene-hero .hero-title .line {
+        display: block;
+      }
+      #scene-hero .hl {
+        background: linear-gradient(90deg, #08a5fc 0%, #fd9501 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      #scene-hero .hero-sub {
+        position: relative;
+        margin-top: 32px;
+        max-width: 900px;
+        font-size: 30px;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.78);
+        font-weight: 400;
+      }
+    </style>
+
+    <div class="blob" style="width: 620px; height: 620px; left: -180px; top: -220px; background: #08a5fc; opacity: 0.16"></div>
+    <div class="blob" style="width: 520px; height: 520px; right: -140px; bottom: -200px; background: #fd9501; opacity: 0.14"></div>
+
+    <div class="hero-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" />
+      </svg>
+      Dibuat khusus untuk kreator Indonesia
+    </div>
+
+    <h1 class="hero-title">
+      <span class="line">Semua konten social media Anda,</span>
+      <span class="line hl">dalam satu tempat</span>
+    </h1>
+    <p class="hero-sub">
+      Jadwalkan posting, pantau analitik, dan balas audiens — dari Instagram sampai TikTok,
+      tanpa berpindah aplikasi.
+    </p>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
+        const scope = "#scene-hero";
+
+        tl.fromTo(scope, { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0);
+        tl.fromTo(scope + " .hero-badge", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, 0.3);
+        tl.fromTo(
+          scope + " .hero-title .line",
+          { opacity: 0, y: 44 },
+          { opacity: 1, y: 0, duration: 0.7, stagger: 0.18 },
+          0.6,
+        );
+        tl.fromTo(scope + " .hero-sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, 2.3);
+        tl.to(scope + " .blob", { y: -16, duration: 4, ease: "sine.inOut" }, 0.6);
+        tl.to(scope, { opacity: 0, duration: 0.5, ease: "power2.in" }, 5.5);
+
+        window.__timelines["scene-hero"] = tl;
+      })();
+    </script>
+  </div>
+</template>

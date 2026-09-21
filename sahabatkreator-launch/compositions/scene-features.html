@@ -1,0 +1,174 @@
+<template id="scene-features-template">
+  <div
+    id="scene-features"
+    data-composition-id="scene-features"
+    data-width="1920"
+    data-height="1080"
+    class="scene scene-dark"
+  >
+    <style>
+      #scene-features {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: #0c1627;
+        color: #ffffff;
+        opacity: 0;
+      }
+      #scene-features .features-title {
+        position: relative;
+        font-size: 60px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+      #scene-features .features-sub {
+        position: relative;
+        margin-top: 16px;
+        font-size: 26px;
+        color: rgba(255, 255, 255, 0.66);
+      }
+      #scene-features .feature-grid {
+        position: relative;
+        margin-top: 56px;
+        display: grid;
+        grid-template-columns: repeat(3, 380px);
+        gap: 28px;
+      }
+      #scene-features .feature-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 34px 30px 30px;
+        text-align: left;
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+      }
+      #scene-features .feature-ico {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        background: #e8f5fe;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #08a5fc;
+      }
+      #scene-features .feature-ico svg {
+        width: 28px;
+        height: 28px;
+      }
+      #scene-features .feature-card h3 {
+        margin-top: 20px;
+        font-size: 27px;
+        font-weight: 600;
+        color: #0c1627;
+        letter-spacing: -0.01em;
+      }
+      #scene-features .feature-card p {
+        margin-top: 10px;
+        font-size: 20px;
+        line-height: 1.5;
+        color: #4d4d4d;
+      }
+    </style>
+
+    <h2 class="features-title">Semua yang Anda butuhkan</h2>
+    <p class="features-sub">Fitur lengkap untuk kreator &amp; bisnis</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="16" rx="2" />
+            <path d="M8 3v4M16 3v4M3 10h18" />
+          </svg>
+        </div>
+        <h3>Kalender &amp; Penjadwalan</h3>
+        <p>Rencanakan konten dengan kalender visual. Jadwalkan sekali, tayang di semua platform.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="20" x2="5" y2="12" />
+            <line x1="12" y1="20" x2="12" y2="4" />
+            <line x1="19" y1="20" x2="19" y2="8" />
+            <line x1="3" y1="20" x2="21" y2="20" />
+          </svg>
+        </div>
+        <h3>Analitik Terpadu</h3>
+        <p>Pantau performa lintas platform dalam satu dashboard. Followers, engagement, reach.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.6-.8L3 21l1.9-5.7A8.38 8.38 0 0 1 4.1 11.5a8.5 8.5 0 0 1 8.5-8.5 8.38 8.38 0 0 1 8.4 8.5z" />
+          </svg>
+        </div>
+        <h3>Inbox Engagement</h3>
+        <p>Balas komentar, mention, DM, dan review dari satu inbox. Tidak ada interaksi terlewat.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9.5" cy="7" r="4" />
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        </div>
+        <h3>Kolaborasi Tim</h3>
+        <p>Undang anggota tim dengan role dan permission jelas. Audit setiap perubahan konten.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <circle cx="9" cy="9" r="2" />
+            <path d="M21 15l-5-5L5 21" />
+          </svg>
+        </div>
+        <h3>Pustaka Media</h3>
+        <p>Simpan semua aset visual di satu tempat. Upload sekali, pakai di semua postingan.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+        <h3>Keamanan Berlapis</h3>
+        <p>2FA, enkripsi token, dan audit log. Data akun social media Anda aman bersama kami.</p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
+        const scope = "#scene-features";
+
+        tl.fromTo(scope, { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0);
+        tl.fromTo(scope + " .features-title", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, 0.4);
+        tl.fromTo(scope + " .features-sub", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5 }, 0.8);
+        tl.fromTo(
+          scope + " .feature-card",
+          { opacity: 0, y: 60, scale: 0.95 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.13 },
+          1.2,
+        );
+        tl.to(scope, { opacity: 0, duration: 0.5, ease: "power2.in" }, 7.5);
+
+        window.__timelines["scene-features"] = tl;
+      })();
+    </script>
+  </div>
+</template>

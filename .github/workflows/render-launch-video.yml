@@ -1,0 +1,61 @@
+name: Render launch video
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "sahabatkreator-launch/**"
+      - ".github/workflows/render-launch-video.yml"
+  workflow_dispatch:
+    inputs:
+      resolution:
+        description: "Output resolution preset"
+        required: false
+        default: "1080p"
+        type: choice
+        options:
+          - 1080p
+          - 4k
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install FFmpeg
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          ffmpeg -version | head -n 1
+
+      - name: Ensure headless Chrome
+        run: npx --yes hyperframes browser ensure
+
+      - name: Lint composition
+        run: npx --yes hyperframes lint sahabatkreator-launch
+
+      - name: Render
+        run: |
+          npx --yes hyperframes render sahabatkreator-launch \
+            --output sahabatkreator-launch/renders/launch.mp4 \
+            --resolution "${{ github.event.inputs.resolution || '1080p' }}"
+        env:
+          HYPERFRAMES_NO_UPDATE_CHECK: "1"
+          PRODUCER_LOW_MEMORY_MODE: "0"
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: launch-video
+          path: sahabatkreator-launch/renders/launch.mp4
+          if-no-files-found: error
+          retention-days: 30
